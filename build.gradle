@@ -1,0 +1,38 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.10.RELEASE'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+group = 'com.bootcamp.userapp'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+
+dependencies {
+
+    compile 'org.springframework.boot:spring-boot-starter-data-jpa'
+    compile 'javax.servlet:jstl:1.2'
+    compile 'mysql:mysql-connector-java'
+    compile 'org.springframework.boot:spring-boot-starter-web'
+    compile 'org.apache.tomcat.embed:tomcat-embed-jasper:8.5.14'
+    compile 'org.webjars:jquery:2.0.3-1'
+    compile 'org.webjars:bootstrap:3.2.0'
+
+    runtime('org.springframework.boot:spring-boot-devtools')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
